@@ -1,0 +1,25 @@
+﻿<ion-view view-title="Firma">
+	<ion-content>
+		<div class="card">
+			<div class="item item-divider">
+				Firma Recepción
+			</div>
+            <div class="card" ng-show="pedido.Firmado==1">
+                <div class="item item-text-wrap">
+                    <img ng-src='{{signature}}' class="full-width" />
+                </div>
+            </div>
+			<div class="item item-text-wrap">
+				<canvas id='signatureCanvas' class="full-width" height='180' style='border: 1px solid black;'></canvas>
+			</div>
+			<div class="item item-divider">
+				<div class='button-bar'>
+					<a class='button button-block button-energized' ng-click='clearCanvas()'>Limpiar</a>
+					<br />
+					<a class='button button-block button-balanced' ng-click='saveCanvas()'>Guardar</a>
+				</div>
+			</div>
+		</div>
+		
+	</ion-content>
+</ion-view>

@@ -1,0 +1,30 @@
+﻿<ion-modal-view>
+    <ion-header-bar class="bar bar-dark">
+        <button class="button button-clear" ng-click="hideModal()">Cerrar</button>
+        <h1 class="title">Inicialización Asistida</h1>
+    </ion-header-bar>
+    <ion-content>
+        <div class="list card" ng-show="camiones.length > 0">
+            <div class="item item-divider">
+                Usuarios del Sistema
+            </div>
+            <ion-list>
+                <ion-item class="item" ng-repeat="camion in camiones" ng-click="SetLogin(camion)">
+                    <i class="icon ion-person"></i>
+                    {{ camion.Matricula }}
+                    <span class="item-note">
+                        <i class="icon ion-key"></i>
+                        {{ camion.Clave }}
+                    </span>
+                </ion-item>
+            </ion-list>
+        </div>
+        <br />
+        <div class="list card">
+            <a ng-click='InicializaBBDD()' class="item item-icon-left">
+                <i class="icon ion-ios-infinite"></i>
+                Inicializa BBDD
+            </a>
+        </div>
+    </ion-content>
+</ion-modal-view>

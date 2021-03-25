@@ -1,0 +1,25 @@
+﻿<ion-view view-title="Detalle {{pedido.NSeguimiento}}">
+    <ion-content class="padding">
+        <div class="list card">
+
+            <div class="item item-divider item-avatar">
+                <img src="img/pedidos.png">
+                <h2>{{pedido.Destinatario}}</h2>
+                <p>{{pedido.Telefono}}</p>
+            </div>
+
+            <div class="item item-body">
+                <img ng-src='{{pedido.Firma}}' class="full-image" />
+                <p>Remitente: {{pedido.Remitente}}</p>
+                <p class="royal">Nº Seguimiento: {{pedido.NSeguimiento}}</p>
+                <p>
+                    <a href="#" class="subdued" ng-class="{'positive': pedido.TipoTransporte == 'Entrega', 'assertive': pedido.TipoTransporte == 'Recogida'}">{{pedido.TipoTransporte}}</a>
+                    <a href="#" class="subdued">{{pedido.NBultos}} Bultos</a>
+                    <a href="#" class="subdued"><i class="icon lg ion-ios-checkmark balanced" ng-show="{{pedido.Finalizado==1}}"></i> </a>
+                    <a href="#" class="subdued"><i class="icon lg ion-clipboard energized" ng-show="{{pedido.Finalizado==0}}"></i> </a>
+                </p>
+            </div>
+
+        </div>
+    </ion-content>
+</ion-view>

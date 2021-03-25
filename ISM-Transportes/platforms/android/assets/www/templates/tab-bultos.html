@@ -1,0 +1,25 @@
+﻿<ion-view view-title="Bultos">
+    <ion-content>
+        <ion-list>
+            <ion-item ng-repeat="bulto in bultos" type="item-text-wrap">
+                <div class="row">
+                    <div class="col-10">
+                        <i class="icon lg ion-ios-albums-outline"></i>
+                    </div>
+                    <div class="col col-50">
+                        <h2>{{bulto.Descripcion}}</h2>
+                        <p>Nº {{bulto.Numero}}</p>
+                    </div>
+                    <div class="col item-icon-right">
+                        <a href="#/tab/incidencia/{{bulto.Id}}">
+                            <i class="energized icon ion-ios-flag" ng-show="bulto.Foto!=null"></i> 
+                            <span class="item-note" ng-show="bulto.Foto==null">
+                                Registrar<br />Incidencia
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

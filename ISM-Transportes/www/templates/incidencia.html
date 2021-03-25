@@ -1,0 +1,21 @@
+﻿<ion-view view-title="Incidencia">
+    <ion-content class="has-header padding" ng-controller="imageCtrl" >
+        <div class="button-bar">
+            <button class="button button-outline button-positive" ng-click="addImage()">
+                <i class="icon ion-ios-camera-outline"></i> Hacer Foto
+            </button>
+        </div>
+        <br><br>
+        <div ng-show="images.length > 0">
+            <div class="item item-divider">
+                <i class="ion-images"></i>
+                Fotos registradas
+            </div>
+            <a class="item item-list-detail">
+                <ion-scroll direction="x">
+                    <img ng-repeat="image in images" ng-src="{{urlForImage(image)}}" ng-click="showImages($index)" class="image-list-thumb" />
+                </ion-scroll>
+            </a>
+        </div>
+    </ion-content>
+</ion-view>

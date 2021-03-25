@@ -1,0 +1,38 @@
+﻿<ion-view view-title="Pedidos">
+    <ion-content>
+        <div class="card" ng-hide="pedidos.length > 0">
+            <div class="item item-text-wrap">
+                <i>Sin pedidos en esta dirección</i>
+            </div>
+        </div>
+        <ion-list ng-show="pedidos.length > 0">
+            <ion-item ng-repeat="pedido in pedidos" type="item-text-wrap">
+                <div class="row">
+                    <div class="col-10">
+                        <i class="icon lg ion-ios-checkmark balanced" ng-show="{{pedido.Finalizado==1}}"></i>
+                        <i class="icon lg ion-clipboard energized" ng-show="{{pedido.Finalizado==0}}"></i>
+                    </div>
+                    <div class="col col-50">
+                        <h2>{{pedido.Remitente}}</h2>
+                        <p>
+                            <span ng-class="{'positive': pedido.TipoTransporte == 'Entrega', 'assertive': pedido.TipoTransporte == 'Recogida'}">{{pedido.TipoTransporte}}</span>: {{pedido.NBultos}} Bulto/s
+                        </p>
+                        <h3>{{pedido.Destinatario}}</h3>
+                    </div>
+                    <div class="col-15">
+                        <a href="#/tab/firma/{{pedido.Id}}"><img ng-src="img/firma.png" width="50%"></a>
+                    </div>
+                    <div class="col-15">
+                        <a href="#/tab/pedido/{{pedido.Id}}"><i class="icon lg ion-ios-information-outline positive"></i></a>
+                    </div>
+                    <div class="col item-icon-right">
+                        <a href="#/tab/bultos/{{pedido.Id}}"><i class="icon ion-chevron-right icon-accessory"></i></a>
+                    </div>
+                    <ion-option-button ng-show="{{pedido.Firma!=null}}" class="button-balanced" ng-click="entregado(pedido)">
+                        Entregado
+                    </ion-option-button>
+                </div>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

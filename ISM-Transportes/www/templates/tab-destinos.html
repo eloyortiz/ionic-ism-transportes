@@ -1,0 +1,19 @@
+﻿<ion-view view-title="Destinos">
+    <ion-content>
+        <div class="card" ng-hide="destinos.length > 0">
+            <div class="item item-text-wrap">
+                <i>Actualmente no tiene destinos asignados</i>
+            </div>
+        </div>
+        <ion-list ng-show="destinos.length > 0">
+            <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="destino in destinos" type="item-text-wrap" href="#/tab/pedidos/{{destino.Id}}">
+                <img ng-src="img/direcciones.png">
+                <h2>#{{destino.Orden}}</h2>
+                <h3>{{destino.Direccion}}</h3>
+                <p>Nº {{destino.Numero}} {{destino.Piso}}</p>
+                <p>{{destino.CodigoPostal}} {{destino.Localidad}} ({{destino.Provincia}})</p>
+                <i class="icon ion-chevron-right icon-accessory"></i>
+            </ion-item>
+        </ion-list>
+</ion-content>
+</ion-view>

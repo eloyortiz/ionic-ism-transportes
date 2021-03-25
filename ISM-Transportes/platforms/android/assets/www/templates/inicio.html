@@ -1,0 +1,29 @@
+﻿<ion-view hide-nav-bar="true">
+    <ion-content scroll='false'>
+        <div class="card">
+            <img class="center" src="img/ISM_transportes.jpg">
+            <div class="item item-text-wrap">
+                <div class="list">
+                    <label class="item item-input">
+                        <span class="input-label">Matricula</span>
+                        <input type="text" data-ng-model="user.Matricula">
+                    </label>
+                    <label class="item item-input">
+                        <span class="input-label">Contraseña</span>
+                        <input type="password" data-ng-model="user.Clave">
+                    </label>
+                </div>
+                <div class="padding">
+                    <button class="button button-block button-positive" ng-click="Login()"><i class="icon ion-log-in"></i> Acceder</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="list card">
+            <a ng-click='openUsuariosModal()' class="item item-icon-left">
+                <i class="icon ion-ios-color-wand-outline"></i>
+                Inicialización Asistida
+            </a>
+        </div>
+    </ion-content>
+</ion-view>
